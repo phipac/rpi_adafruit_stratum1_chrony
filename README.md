@@ -376,9 +376,9 @@ Restart the GPSd service:
 ## Improve Chrony process priority, using systemd
 Due to the Chrony software has not the mechanism to reduce itself its `nice` process value, we'll force it through systemd:
 
-> sudo sed -i '/\[Service\]/a Nice=-10' /usr/lib/systemd/system/chrony.service
+> sudo sed -i '/[Service]/a Nice=-10' /usr/lib/systemd/system/chrony.service
 >
-> sudo systemctl daemon-relead
+> sudo systemctl daemon-reload
 > 
 > sudo systemctl restart chrony
 
